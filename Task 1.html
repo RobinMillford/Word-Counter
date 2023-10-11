@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Responsive Word Counter</title>
+    <style>
+        .container {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Responsive Word Counter</h1>
+        <textarea id="inputText" rows="4" cols="50" placeholder="Type or paste your text here..."></textarea>
+        <p>Word Count: <span id="wordCount">0</span></p>
+    </div>
+
+    <script>
+        const inputText = document.getElementById("inputText");
+        const wordCount = document.getElementById("wordCount");
+
+        inputText.addEventListener("input", () => {
+            const text = inputText.value;
+            const words = text.split(/\s+/).filter(word => word !== '');
+            wordCount.textContent = words.length;
+        });
+    </script>
+</body>
+</html>
